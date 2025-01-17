@@ -1867,3 +1867,44 @@
 2025-01-17 21:23:35,117 [INFO] WebApp:190 - Connection lost
 2025-01-17 21:23:35,429 [INFO] WebApp:187 - Connection restablished
 2025-01-17 21:28:36,270 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2025-01-17 22:37:55,847 [INFO] WebApp:190 - Connection lost
+2025-01-17 22:37:57,640 [INFO] WebApp:187 - Connection restablished
+2025-01-17 22:37:59,529 [INFO] WebApp:190 - Connection lost
+2025-01-17 22:37:59,680 [INFO] WebApp:187 - Connection restablished
+2025-01-17 22:38:02,673 [INFO] WebApp:190 - Connection lost
+2025-01-17 22:38:02,814 [INFO] WebApp:187 - Connection restablished
+2025-01-17 23:29:57,252 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 550621472 Bytes (943718400)
+2025-01-17 23:29:58,859 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 576835872 Bytes (943718400)
+2025-01-17 23:30:06,901 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 733600032 Bytes (943718400)
+2025-01-17 23:30:07,289 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-01-17 23:30:07,291 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-01-17 23:30:07,292 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-01-17 23:30:07,292 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-01-17 23:30:07,293 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-01-17 23:30:07,295 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-01-17 23:30:07,509 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\MXTmpFiles\license.tmp_save
+2025-01-17 23:30:08,080 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\MXTmpFiles\license.tmp
+2025-01-17 23:30:08,150 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\MXTmpFiles\gpio.tmp_save
+2025-01-17 23:30:08,543 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\MXTmpFiles\gpio.tmp
+2025-01-17 23:30:08,744 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\Core\Src\stm32f4xx_it.c_save
+2025-01-17 23:30:09,232 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\Core\Src\stm32f4xx_it.c
+2025-01-17 23:30:09,239 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\Core\Inc\stm32f4xx_it.h_save
+2025-01-17 23:30:09,380 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\Core\Inc\stm32f4xx_it.h
+2025-01-17 23:30:09,403 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\Core\Src\stm32f4xx_hal_msp.c_save
+2025-01-17 23:30:09,683 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\Core\Src\stm32f4xx_hal_msp.c
+2025-01-17 23:30:09,692 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\MXTmpFiles\system.tmp_save
+2025-01-17 23:30:09,807 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\MXTmpFiles\system.tmp
+2025-01-17 23:30:09,863 [INFO] CodeEngine:311 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-01-17 23:30:10,105 [INFO] CodeEngine:335 - Generated code: C:\STM32_tutorials\UART2_Example\Core\Inc\stm32f4xx_hal_conf.h
+2025-01-17 23:30:10,201 [WARN] IPConfigManager:3034 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2025-01-17 23:30:10,213 [INFO] ApiDbMcu:508 - Load IP Config File for USART2
+2025-01-17 23:30:10,294 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\Core\Inc\main.h_save
+2025-01-17 23:30:10,484 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\Core\Inc\main.h
+2025-01-17 23:30:10,515 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\UART2_Example\Core\Src\main.c_save
+2025-01-17 23:30:10,759 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\UART2_Example\Core\Src\main.c
+2025-01-17 23:30:11,472 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 380mS.
+2025-01-17 23:30:11,477 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-01-17 23:30:11,620 [INFO] ConfigFileManager:1579 - The Die is : DIE421
+2025-01-17 23:30:13,993 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 2515mS.
+2025-01-17 23:30:13,994 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-01-17 23:30:13,998 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
