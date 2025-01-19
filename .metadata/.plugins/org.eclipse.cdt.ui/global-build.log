@@ -1,28 +1,21 @@
-17:31:24 **** Incremental Build of configuration Debug for project UART2_Example ****
+22:56:06 **** Incremental Build of configuration Debug for project UART2_Example ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/it.d" -MT"Core/Src/it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/it.o"
-../Core/Src/it.c: In function 'SysTick_Handler':
-../Core/Src/it.c:10:9: warning: implicit declaration of function 'HAL_IncTick' [-Wimplicit-function-declaration]
-   10 |         HAL_IncTick();
-      |         ^~~~~~~~~~~
-../Core/Src/it.c:12:9: warning: implicit declaration of function 'HAL_SYSTICK_IRQHandler' [-Wimplicit-function-declaration]
-   12 |         HAL_SYSTICK_IRQHandler();
-      |         ^~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "UART2_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\STM32_tutorials\UART2_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART2_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: UART2_Example.elf
  
 arm-none-eabi-size  UART2_Example.elf 
 arm-none-eabi-objdump -h -S UART2_Example.elf  > "UART2_Example.list"
    text	   data	    bss	    dec	    hex	filename
-   5740	     16	   1640	   7396	   1ce4	UART2_Example.elf
+   6180	     16	   1640	   7836	   1e9c	UART2_Example.elf
 Finished building: default.size.stdout
  
 Finished building: UART2_Example.list
  
-17:31:54 **** Incremental Build of configuration Debug for project UART2_Example ****
+22:56:16 **** Incremental Build of configuration Debug for project UART2_Example ****
 make -j4 all 
 arm-none-eabi-size  UART2_Example.elf 
    text	   data	    bss	    dec	    hex	filename
-   5740	     16	   1640	   7396	   1ce4	UART2_Example.elf
+   6180	     16	   1640	   7836	   1e9c	UART2_Example.elf
 Finished building: default.size.stdout
  
