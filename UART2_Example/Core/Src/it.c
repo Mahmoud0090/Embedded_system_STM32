@@ -5,4 +5,11 @@
  *      Author: User
  */
 
+void SysTick_Handler(void) //systick interrupt handler
+{
+	HAL_IncTick();
+
+	HAL_SYSTICK_IRQHandler();
+
+}
 
