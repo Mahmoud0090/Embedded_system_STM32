@@ -22,11 +22,11 @@ int main(void)
 	SystemClockConfig();
 	UART2_Init();
 
-	uint16_t len_data = strlen(User_data);
+	uint32_t len_data = strlen(User_data);
 
-	if (HAL_UART_Transmit(&huart2 , (uint8_t *)User_data , len_data , HAL_MAX_DELAY) != HAL_OK)
+	if (HAL_UART_Transmit(&huart , User_data , len_data , HAL_MAX_DELAY) != HAL_OK)
 	{
-		Error_handler();
+		Error_Handler();
 	}
 
 	while(1);
