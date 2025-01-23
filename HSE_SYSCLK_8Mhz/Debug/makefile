@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := UART2_Example_IT_based
+BUILD_ARTIFACT_NAME := HSE_SYSCLK_8Mhz
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-UART2_Example_IT_based.elf \
+HSE_SYSCLK_8Mhz.elf \
 
 MAP_FILES += \
-UART2_Example_IT_based.map \
+HSE_SYSCLK_8Mhz.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-UART2_Example_IT_based.list \
+HSE_SYSCLK_8Mhz.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: UART2_Example_IT_based.elf secondary-outputs
+main-build: HSE_SYSCLK_8Mhz.elf secondary-outputs
 
 # Tool invocations
-UART2_Example_IT_based.elf UART2_Example_IT_based.map: $(OBJS) $(USER_OBJS) C:\STM32_tutorials\UART2_Example_IT_based\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "UART2_Example_IT_based.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\STM32_tutorials\UART2_Example_IT_based\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART2_Example_IT_based.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+HSE_SYSCLK_8Mhz.elf HSE_SYSCLK_8Mhz.map: $(OBJS) $(USER_OBJS) C:\STM32_tutorials\HSE_SYSCLK_8Mhz\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "HSE_SYSCLK_8Mhz.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\STM32_tutorials\HSE_SYSCLK_8Mhz\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HSE_SYSCLK_8Mhz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-UART2_Example_IT_based.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "UART2_Example_IT_based.list"
+HSE_SYSCLK_8Mhz.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "HSE_SYSCLK_8Mhz.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) UART2_Example_IT_based.elf UART2_Example_IT_based.list UART2_Example_IT_based.map default.size.stdout
+	-$(RM) HSE_SYSCLK_8Mhz.elf HSE_SYSCLK_8Mhz.list HSE_SYSCLK_8Mhz.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

@@ -461,8 +461,6 @@ void SystemClockConfig(void)
  800058c:	b480      	push	{r7}
  800058e:	af00      	add	r7, sp, #0
 
-
-
 }
  8000590:	bf00      	nop
  8000592:	46bd      	mov	sp, r7
@@ -589,7 +587,6 @@ void Error_handler(void)
 {
  8000650:	b480      	push	{r7}
  8000652:	af00      	add	r7, sp, #0
-
 	while(1);
  8000654:	bf00      	nop
  8000656:	e7fd      	b.n	8000654 <Error_handler+0x4>
