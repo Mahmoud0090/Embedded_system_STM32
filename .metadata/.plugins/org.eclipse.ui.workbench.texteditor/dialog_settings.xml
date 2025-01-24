@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="RCC_HSE_Config"/>
+		<item key="selection" value="RCC_APB1_APB2_Clock_Source"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="RCC_APB1_APB2_Clock_Source"/>
+			<item value="RCC_AHB_Clock_Source"/>
+			<item value="RCC_System_Clock_Source"/>
+			<item value="RCC_System_Clock_Type"/>
 			<item value="RCC_HSE_Config"/>
 			<item value="RCC_Oscillator_Type"/>
 			<item value="GPIO_mode_define"/>
@@ -19,18 +23,19 @@
 			<item value="GPIO_pull_define"/>
 			<item value="HAL_GPIO_Init"/>
 			<item value="UART_Stop_Bits"/>
-			<item value="UART_Mode"/>
-			<item value=" UART_Parity"/>
-			<item value="UART_Word_Length"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1478"/>
-		<item key="DIALOG_Y_ORIGIN" value="152"/>
+		<item key="DIALOG_X_ORIGIN" value="1270"/>
+		<item key="DIALOG_Y_ORIGIN" value="551"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="724"/>
+		<item key="DIALOG_Y_ORIGIN" value="396"/>
 	</section>
 </section>
