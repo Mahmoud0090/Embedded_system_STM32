@@ -1,33 +1,15 @@
-01:18:42 **** Incremental Build of configuration Debug for project PLL_SYSCLK ****
+00:43:17 **** Incremental Build of configuration Debug for project time_base_100ms ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:34:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-   34 |         sprintf(msg , "SYSCLK : %ld\r\n", HAL_RCC_GetSysClockFreq());
-      |         ^~~~~~~
-../Core/Src/main.c:10:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-    9 | #include <string.h>
-  +++ |+#include <stdio.h>
-   10 | 
-../Core/Src/main.c:34:9: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
-   34 |         sprintf(msg , "SYSCLK : %ld\r\n", HAL_RCC_GetSysClockFreq());
-      |         ^~~~~~~
-../Core/Src/main.c:34:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-arm-none-eabi-gcc -o "PLL_SYSCLK.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\STM32_tutorials\PLL_SYSCLK\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PLL_SYSCLK.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PLL_SYSCLK.elf
+arm-none-eabi-gcc "../Core/Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/msp.d" -MT"Core/Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/msp.o"
+arm-none-eabi-gcc -o "time_base_100ms.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\STM32_tutorials\time_base_100ms\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="time_base_100ms.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: time_base_100ms.elf
  
-arm-none-eabi-size  PLL_SYSCLK.elf 
-arm-none-eabi-objdump -h -S PLL_SYSCLK.elf  > "PLL_SYSCLK.list"
+arm-none-eabi-size  time_base_100ms.elf 
+arm-none-eabi-objdump -h -S time_base_100ms.elf  > "time_base_100ms.list"
    text	   data	    bss	    dec	    hex	filename
-  11836	     92	   1972	  13900	   364c	PLL_SYSCLK.elf
+   2248	     12	   1644	   3904	    f40	time_base_100ms.elf
 Finished building: default.size.stdout
  
-Finished building: PLL_SYSCLK.list
- 
-01:18:49 **** Incremental Build of configuration Debug for project PLL_SYSCLK ****
-make -j4 all 
-arm-none-eabi-size  PLL_SYSCLK.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11836	     92	   1972	  13900	   364c	PLL_SYSCLK.elf
-Finished building: default.size.stdout
+Finished building: time_base_100ms.list
  

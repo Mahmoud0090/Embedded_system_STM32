@@ -5,7 +5,7 @@
  *      Author: User
  */
 
-#include "stm32f4xx_hal.h"
+#include "main.h"
 
 
 void HAL_MspInit(void)
@@ -22,4 +22,16 @@ void HAL_MspInit(void)
 	HAL_NVIC_SetPriority(MemoryManagement_IRQn , 0 , 0);
 	HAL_NVIC_SetPriority(BusFault_IRQn , 0 , 0);
 	HAL_NVIC_SetPriority(UsageFault_IRQn , 0 , 0);
+}
+
+void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htimer)
+{
+	//1 - enable the clock for TIM6 peripheral
+	__HAL_RCC_TIM6_CLK_ENABLE();
+
+	//2 - enable the IRQ for TIM6
+	HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
+
+	// set up the priority TIM6_DAC_IRQn
+	HAL_NVIC_SetPriority(TIM6_DAC_IRQn, 15, 0);
 }
