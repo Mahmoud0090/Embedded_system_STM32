@@ -1,0 +1,50 @@
+2025-01-26 00:45:32,799 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2025-01-26 00:45:38,214 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 6804mS.
+2025-01-26 00:45:38,217 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-01-26 00:45:38,225 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-01-26 00:45:40,996 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-01-26 00:45:41,000 [INFO] ApiDb:448 - Save user favorites file C:\Users\User/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-01-26 00:45:41,001 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-01-26 00:45:41,002 [INFO] ApiDb:448 - Save user favorites file C:\Users\User/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2025-01-26 00:45:41,003 [INFO] ApiDb:452 - User favorites Boards=[]
+2025-01-26 00:45:41,007 [INFO] ApiDb:448 - Save user favorites file C:\Users\User/.stm32cubeide/favorites.examples.txt: 0 item(s)
+2025-01-26 00:45:41,007 [INFO] ApiDb:452 - User favorites Examples=[]
+2025-01-26 00:46:10,284 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 672310960 Bytes (901775360)
+2025-01-26 00:46:12,310 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 699573936 Bytes (901775360)
+2025-01-26 00:46:15,539 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 783460016 Bytes (901775360)
+2025-01-26 00:46:16,011 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM6_7
+2025-01-26 00:46:16,011 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-01-26 00:46:16,011 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-01-26 00:46:16,011 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-01-26 00:46:16,012 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-01-26 00:46:16,013 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-01-26 00:46:16,303 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\MXTmpFiles\license.tmp_save
+2025-01-26 00:46:16,543 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\MXTmpFiles\license.tmp
+2025-01-26 00:46:16,599 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\MXTmpFiles\gpio.tmp_save
+2025-01-26 00:46:16,893 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\MXTmpFiles\gpio.tmp
+2025-01-26 00:46:17,135 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\Core\Src\stm32f4xx_it.c_save
+2025-01-26 00:46:17,322 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\Core\Src\stm32f4xx_it.c
+2025-01-26 00:46:17,343 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\Core\Inc\stm32f4xx_it.h_save
+2025-01-26 00:46:17,415 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\Core\Inc\stm32f4xx_it.h
+2025-01-26 00:46:17,452 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\Core\Src\stm32f4xx_hal_msp.c_save
+2025-01-26 00:46:17,691 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\Core\Src\stm32f4xx_hal_msp.c
+2025-01-26 00:46:17,698 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\MXTmpFiles\system.tmp_save
+2025-01-26 00:46:17,849 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\MXTmpFiles\system.tmp
+2025-01-26 00:46:17,885 [INFO] CodeEngine:311 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-01-26 00:46:18,086 [INFO] CodeEngine:335 - Generated code: C:\STM32_tutorials\time_base_100ms\Core\Inc\stm32f4xx_hal_conf.h
+2025-01-26 00:46:18,145 [WARN] IPConfigManager:3034 - Warning: the RefConfig PLL2P_FOR_MCO is not available in your config.xml file
+2025-01-26 00:46:18,175 [INFO] ApiDbMcu:508 - Load IP Config File for TIM6
+2025-01-26 00:46:18,177 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-01-26 00:46:18,179 [WARN] CodeGenerator:4152 - IP not found : null
+2025-01-26 00:46:18,214 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\Core\Inc\main.h_save
+2025-01-26 00:46:18,383 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\Core\Inc\main.h
+2025-01-26 00:46:18,406 [INFO] CodeEngine:255 - oldGeneratedFile, C:\STM32_tutorials\time_base_100ms\Core\Src\main.c_save
+2025-01-26 00:46:18,581 [INFO] CodeEngine:279 - Generated code: C:\STM32_tutorials\time_base_100ms\Core\Src\main.c
+2025-01-26 00:46:19,110 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 264mS.
+2025-01-26 00:46:19,114 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-01-26 00:46:19,211 [INFO] ConfigFileManager:1579 - The Die is : DIE421
+2025-01-26 00:46:21,561 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 2448mS.
+2025-01-26 00:46:21,562 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-01-26 00:46:21,574 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-01-26 02:26:58,530 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 668719728 Bytes (1005584384)
+2025-01-26 02:27:55,081 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
