@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="handler"/>
+		<item key="selection" value="__HAL_TIM_ENABLE"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="__HAL_TIM_ENABLE"/>
 			<item value="Handler"/>
 			<item value="RCC_HSE_Config"/>
 			<item value="RCC_Oscillator_Type"/>
@@ -22,7 +23,6 @@
 			<item value="GPIO_mode_define"/>
 			<item value="GPIO_pins_define"/>
 			<item value="UART_Hardware_Flow_Control"/>
-			<item value="GPIO_Alternate_function"/>
 		</list>
 		<list key="replacehistory">
 		</list>

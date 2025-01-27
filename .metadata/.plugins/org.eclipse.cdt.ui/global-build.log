@@ -1,15 +1,37 @@
-00:43:17 **** Incremental Build of configuration Debug for project time_base_100ms ****
+00:21:11 **** Incremental Build of configuration Debug for project time_base_100ms ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/msp.d" -MT"Core/Src/msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/msp.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:30:17: warning: this 'while' clause does not guard... [-Wmisleading-indentation]
+   30 |                 while(!(TIM6->SR & TIM_SR_UIF));
+      |                 ^~~~~
+In file included from ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:156,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h:29,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:27,
+                 from ../Core/Inc/stm32f4xx_hal_conf.h:275,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Src/main.c:7:
+../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h:1072:29: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'while'
+ 1072 | #define TIM6                ((TIM_TypeDef *) TIM6_BASE)
+      |                             ^
+../Core/Src/main.c:32:25: note: in expansion of macro 'TIM6'
+   32 |                         TIM6->SR = 0;
+      |                         ^~~~
 arm-none-eabi-gcc -o "time_base_100ms.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\STM32_tutorials\time_base_100ms\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="time_base_100ms.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: time_base_100ms.elf
  
 arm-none-eabi-size  time_base_100ms.elf 
 arm-none-eabi-objdump -h -S time_base_100ms.elf  > "time_base_100ms.list"
    text	   data	    bss	    dec	    hex	filename
-   2248	     12	   1644	   3904	    f40	time_base_100ms.elf
+   3436	     12	   1644	   5092	   13e4	time_base_100ms.elf
 Finished building: default.size.stdout
  
 Finished building: time_base_100ms.list
+ 
+00:21:39 **** Incremental Build of configuration Debug for project time_base_100ms ****
+make -j4 all 
+arm-none-eabi-size  time_base_100ms.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3436	     12	   1644	   5092	   13e4	time_base_100ms.elf
+Finished building: default.size.stdout
  

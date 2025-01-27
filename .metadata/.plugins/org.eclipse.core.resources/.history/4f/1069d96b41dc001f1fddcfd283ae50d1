@@ -1,0 +1,46 @@
+/*
+ * main.c
+ *
+ *  Created on: Jan 17, 2025
+ *      Author: User
+ */
+#include "stm32f4xx_hal.h"
+#include "main.h"
+#include <string.h>
+
+void SystemClockConfig(void);
+void Error_handler(void);
+void TIMER6_init(void);
+
+TIM_HandleTypeDef htimer6;
+
+int main(void)
+{
+	HAL_Init();
+	SystemClockConfig();
+	TIMER6_init();
+
+	while(1);
+	return 0;
+}
+
+void SystemClockConfig(void)
+{
+
+}
+
+void TIMER6_init(void)
+{
+	htimer6.Instance = TIM6;
+	htimer6.Init.Prescaler = 24;
+	htimer6.Init.Period = 64000-1;
+
+	HAL_TIM_Base_Init(&htimer6);
+}
+
+void Error_handler(void)
+{
+
+	while(1);
+
+}
