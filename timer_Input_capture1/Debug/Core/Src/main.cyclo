@@ -1,0 +1,5 @@
+../Core/Src/main.c:23:5:main	1
+../Core/Src/main.c:39:6:SystemClock_Config	7
+../Core/Src/main.c:133:6:Gpio_Init	1
+../Core/Src/main.c:145:6:Timer2_init	2
+../Core/Src/main.c:160:6:Error_handler	1
