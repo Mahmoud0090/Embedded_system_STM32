@@ -24,3 +24,24 @@ void HAL_MspInit(void)
 	HAL_NVIC_SetPriority(UsageFault_IRQn , 0 , 0);
 }
 
+void HAL_TIM_IC_MspInit(TIM_HandleTypeDef *htim)
+{
+	//1. enable the clocks
+	__HAL_RCC_TIM12_CLK_ENABLE();
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	//2.enable gpio pin for alterante func
+	GPIO_InitTypeDef gpio_tim2;
+
+	gpio_tim2.Alternate = GPIO_AF1_TIM2;
+	gpio_tim2.Mode = GPIO_MODE_AF_PP;
+	gpio_tim2.Pin = GPIO_PIN_0;
+	//gpio_tim2.Pull = GPIO_NOPULL;
+
+	HAL_GPIO_Init(GPIOA, &gpio_tim2);
+
+	//3.enable the IRQ
+	HAL_NVIC_SetPriority(TIM2_IRQn, 15, 0);
+	HAL_NVIC_EnableIRQ(TIM2_IRQn);
+}

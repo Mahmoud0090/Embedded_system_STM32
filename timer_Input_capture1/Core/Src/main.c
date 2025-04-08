@@ -144,12 +144,24 @@ void Gpio_Init(void)
 
 void Timer2_init(void)
 {
+	TIM_IC_InitTypeDef timer2IC_Config;
+
 	htimer2.Instance = TIM2;
 	htimer2.Init.CounterMode = TIM_COUNTERMODE_UP; //this is default
 	htimer2.Init.Period = 0xFFFFFFFF;
 	htimer2.Init.Prescaler = 1; // time count clk = (tim clk)/(prescaler + 1)
 
 	if(HAL_TIM_IC_Init(&htimer2)!= HAL_OK)
+	{
+		Error_handler();
+	}
+
+	timer2IC_Config.ICFilter = 0;
+	timer2IC_Config.ICPolarity = TIM_ICPOLARITY_RISING;
+	timer2IC_Config.ICPrescaler = TIM_ICPSC_DIV1;
+	timer2IC_Config.ICSelection = TIM_ICSELECTION_DIRECTTI;
+
+	if(HAL_TIM_IC_ConfigChannel(&htimer2, &timer2IC_Config, TIM_CHANNEL_1)!= HAL_OK)
 	{
 		Error_handler();
 	}
