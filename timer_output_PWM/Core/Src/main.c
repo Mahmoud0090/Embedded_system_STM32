@@ -44,22 +44,22 @@ int main(void)
 
 	Timer2_init();
 
-	if(HAL_TIM_OC_Start_IT(&htimer2, TIM_CHANNEL_1) != HAL_OK)
+	if(HAL_TIM_PWM_Start(&htimer2, TIM_CHANNEL_1) != HAL_OK)
 	{
 		Error_handler();
 	}
 
-	if(HAL_TIM_OC_Start_IT(&htimer2, TIM_CHANNEL_2) != HAL_OK)
+	if(HAL_TIM_PWM_Start(&htimer2, TIM_CHANNEL_2) != HAL_OK)
 	{
 		Error_handler();
 	}
 
-	if(HAL_TIM_OC_Start_IT(&htimer2, TIM_CHANNEL_3) != HAL_OK)
+	if(HAL_TIM_PWM_Start(&htimer2, TIM_CHANNEL_3) != HAL_OK)
 	{
 		Error_handler();
 	}
 
-	if(HAL_TIM_OC_Start_IT(&htimer2, TIM_CHANNEL_4) != HAL_OK)
+	if(HAL_TIM_PWM_Start(&htimer2, TIM_CHANNEL_4) != HAL_OK)
 	{
 		Error_handler();
 	}

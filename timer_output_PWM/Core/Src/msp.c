@@ -46,7 +46,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 	HAL_NVIC_SetPriority(USART2_IRQn, 15, 0);
 }
 
-void HAL_TIM_OC_MspInit(TIM_HandleTypeDef *htim)
+void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef *htim)
 {
 	GPIO_InitTypeDef tim2OC_ch_gpios;
 
