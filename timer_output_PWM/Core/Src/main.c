@@ -20,6 +20,8 @@ TIM_HandleTypeDef htimer2;
 
 UART_HandleTypeDef huart2;
 
+uint32_t ccr_content;
+
 /*for computing 500Hz ouput
  * the t=1/f = 1/500 = 0.002s so the pulse is 0.002/2 = 0.001
  * so that mean the freq is 1/0.001 = 1Khz
@@ -242,38 +244,6 @@ void Timer2_init(void)
 	}
 }
 
-uint32_t ccr_content;
-
-void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
-{
-	/*TIM2 CH1 toggling with frequency 500Hz*/
-	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
-	{
-		ccr_content = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-		__HAL_TIM_SET_COMPARE(htim , TIM_CHANNEL_1 , ccr_content + pulse1_value);
-	}
-
-	/*TIM2 CH2 toggling with frequency 1000Hz*/
-	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
-	{
-		ccr_content = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
-		__HAL_TIM_SET_COMPARE(htim , TIM_CHANNEL_2 , ccr_content + pulse2_value);
-	}
-
-	/*TIM2 CH3 toggling with frequency 2000Hz*/
-	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_3)
-	{
-		ccr_content = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);
-		__HAL_TIM_SET_COMPARE(htim , TIM_CHANNEL_3 , ccr_content + pulse3_value);
-	}
-
-	/*TIM2 CH4 toggling with frequency 4000Hz*/
-	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4)
-	{
-		ccr_content = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_4);
-		__HAL_TIM_SET_COMPARE(htim , TIM_CHANNEL_4 , ccr_content + pulse4_value);
-	}
-}
 
 void Error_handler(void)
 {
