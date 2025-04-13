@@ -50,6 +50,7 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef *htim)
 {
 	GPIO_InitTypeDef tim2OC_ch_gpios;
 
+	__HAL_RCC_TIM2_CLK_ENABLE();
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 	__HAL_RCC_GPIOB_CLK_ENABLE();
 
