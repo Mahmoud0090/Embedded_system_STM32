@@ -25,6 +25,8 @@ uint32_t pulse2_value = 12500;
 uint32_t pulse3_value = 6250;
 uint32_t pulse4_value = 3125;
 
+uint32_t ccr_content;
+
 int main(void)
 {
 	HAL_Init();
@@ -193,6 +195,8 @@ void Timer2_init(void)
 {
 	TIM_OC_InitTypeDef tim2_OC_init;
 
+	memset(&tim2_OC_init , 0 , sizeof(TIM_OC_InitTypeDef));
+
 	htimer2.Instance = TIM2;
 	htimer2.Init.Period = 0xFFFFFFFF;
 	htimer2.Init.Prescaler = 1;
@@ -230,7 +234,7 @@ void Timer2_init(void)
 	}
 }
 
-uint32_t ccr_content;
+
 
 void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim)
 {
