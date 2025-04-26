@@ -45,3 +45,22 @@ void HAL_UART_MspInit(UART_HandleTypeDef *huart)
 	HAL_NVIC_EnableIRQ(USART2_IRQn);
 	HAL_NVIC_SetPriority(USART2_IRQn, 15, 0);
 }
+
+
+void HAL_CAN_MspInit(CAN_HandleTypeDef *hcan)
+{
+	GPIO_InitTypeDef GPIO_InitStruct;
+
+	__HAL_RCC_CAN1_CLK_ENABLE();
+
+	/*CAN1 GPIO pins configuration
+	 * PA11 -------> CAN1_RX
+	 * PA12 -------> CAN1_Tx
+	 */
+	GPIO_InitStruct.Pin = GPIO_PIN_11 | GPIO_PIN_12;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+}

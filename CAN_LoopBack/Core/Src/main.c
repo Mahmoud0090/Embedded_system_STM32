@@ -26,6 +26,11 @@ int main(void)
 
 	CAN1_Init();
 
+	if(HAL_CAN_Start(&hcan1) != HAL_OK)
+	{
+		Error_handler();
+	}
+
 	CAN1_Tx();
 
 	while(1);
@@ -202,7 +207,7 @@ void CAN1_Tx(void)
 		Error_handler();
 	}
 
-	while(HAL_CAN_IsTxMessagePending(&hcan1, TxMailboxes));
+	while(HAL_CAN_IsTxMessagePending(&hcan1, TxMailbox));
 
 	sprintf(msg , "Message transmitted\r\n");
 
