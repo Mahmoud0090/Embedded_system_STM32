@@ -8,6 +8,7 @@ void Error_handler(void);
 void SystemClock_Config_HSE(uint8_t clock_freq);
 void UART2_Init(void);
 void CAN1_Init(void);
+void CAN1_Tx(void);
 
 UART_HandleTypeDef huart2;
 
@@ -24,6 +25,8 @@ int main(void)
 	UART2_Init();
 
 	CAN1_Init();
+
+	CAN1_Tx();
 
 	while(1);
 
@@ -177,6 +180,34 @@ void CAN1_Init(void)
 	{
 		Error_handler();
 	}
+}
+
+void CAN1_Tx(void)
+{
+	char msg[50];
+
+	CAN_TxHeaderTypeDef TxHeader;
+
+	uint32_t TxMailbox;
+
+	uint8_t Message[6] = {'H' , 'e' , 'l' , 'l' , 'o' , '\0'};
+
+	TxHeader.DLC = 6;
+	TxHeader.StdId = 0x65D;
+	TxHeader.IDE = CAN_ID_STD;
+	TxHeader.RTR = CAN_RTR_DATA;
+
+	if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, Message, &TxMailbox) != HAL_OK)
+	{
+		Error_handler();
+	}
+
+	while(HAL_CAN_IsTxMessagePending(&hcan1, TxMailboxes));
+
+	sprintf(msg , "Message transmitted\r\n");
+
+	HAL_UART_Transmit(&huart2 , (uint8_t*)msg , strlen(msg) , HAL_MAX_DELAY);
+
 }
 
 void Error_handler(void)
