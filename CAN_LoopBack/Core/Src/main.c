@@ -10,6 +10,7 @@ void UART2_Init(void);
 void CAN1_Init(void);
 void CAN1_Tx(void);
 void CAN1_Rx(void);
+void CAN_Filter_Config(void);
 
 UART_HandleTypeDef huart2;
 
@@ -26,6 +27,8 @@ int main(void)
 	UART2_Init();
 
 	CAN1_Init();
+
+	CAN_Filter_Config();
 
 	if(HAL_CAN_Start(&hcan1) != HAL_OK)
 	{
@@ -228,7 +231,7 @@ void CAN1_Rx(void)
 
 	while(! HAL_CAN_GetRxFifoFillLevel(&hcan1, CAN_RX_FIFO0));
 
-	if(HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, RxHeader, rcvd_msg) != HAL_OK)
+	if(HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &RxHeader, rcvd_msg) != HAL_OK)
 	{
 		Error_handler();
 	}
@@ -236,6 +239,26 @@ void CAN1_Rx(void)
 	sprintf(msg , "Message received : %s\r\n" , rcvd_msg);
 
 	HAL_UART_Transmit(&huart2 , (uint8_t*)msg , strlen(msg) , HAL_MAX_DELAY);
+}
+
+void CAN_Filter_Config(void)
+{
+	CAN_FilterTypeDef can1_filter_init;
+
+	can1_filter_init.FilterActivation = ENABLE;
+	can1_filter_init.FilterBank = 0;
+	can1_filter_init.FilterFIFOAssignment = CAN_RX_FIFO0;
+	can1_filter_init.FilterIdHigh = 0x0000;
+	can1_filter_init.FilterIdLow = 0x0000;
+	can1_filter_init.FilterMaskIdHigh = 0x0000;
+	can1_filter_init.FilterMaskIdLow = 0x0000;
+	can1_filter_init.FilterMode = CAN_FILTERMODE_IDMASK;
+	can1_filter_init.FilterScale = CAN_FILTERSCALE_32BIT;
+
+	if(HAL_CAN_ConfigFilter(&hcan1, &can1_filter_init) != HAL_OK)
+	{
+		Error_handler();
+	}
 
 }
 
