@@ -9,6 +9,7 @@ void SystemClock_Config_HSE(uint8_t clock_freq);
 void UART2_Init(void);
 void CAN1_Init(void);
 void CAN1_Tx(void);
+void CAN1_Rx(void);
 
 UART_HandleTypeDef huart2;
 
@@ -32,6 +33,8 @@ int main(void)
 	}
 
 	CAN1_Tx();
+
+	CAN1_Rx();
 
 	while(1);
 
@@ -207,9 +210,30 @@ void CAN1_Tx(void)
 		Error_handler();
 	}
 
+	//we are waiting for at least one message in to the RX FIFO0
 	while(HAL_CAN_IsTxMessagePending(&hcan1, TxMailbox));
 
 	sprintf(msg , "Message transmitted\r\n");
+
+	HAL_UART_Transmit(&huart2 , (uint8_t*)msg , strlen(msg) , HAL_MAX_DELAY);
+
+}
+
+void CAN1_Rx(void)
+{
+	CAN_RxHeaderTypeDef RxHeader;
+	uint8_t rcvd_msg[6];
+
+	char msg[50];
+
+	while(! HAL_CAN_GetRxFifoFillLevel(&hcan1, CAN_RX_FIFO0));
+
+	if(HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, RxHeader, rcvd_msg) != HAL_OK)
+	{
+		Error_handler();
+	}
+
+	sprintf(msg , "Message received : %s\r\n" , rcvd_msg);
 
 	HAL_UART_Transmit(&huart2 , (uint8_t*)msg , strlen(msg) , HAL_MAX_DELAY);
 
