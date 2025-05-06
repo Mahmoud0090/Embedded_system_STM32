@@ -14,11 +14,11 @@ void SysTick_Handler(void) //systick interrupt handler
 
 void TIM6_DAC_IRQHandler(void)
 {
-	__HAL_RCC_USART2_CLK_ENABLE();
+	//__HAL_RCC_USART2_CLK_ENABLE();
 	//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_SET);
 	HAL_TIM_IRQHandler(&htimer6);
 	//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12, GPIO_PIN_RESET);
-	__HAL_RCC_USART2_CLK_DISABLE();
+	//__HAL_RCC_USART2_CLK_DISABLE();
 }
 
 void USART2_IRQHandler(void)
