@@ -141,7 +141,7 @@ void SystemClock_Config_HSE(uint8_t clock_freq)
 void Gpio_Init(void)
 {
 	GPIO_InitTypeDef gpioLed;
-	__HAL_RCC_GPIOA_CLK_ENABLE();
+	//__HAL_RCC_GPIOA_CLK_ENABLE();
 
 	gpioLed.Pin = GPIO_PIN_5;
 	gpioLed.Mode = GPIO_MODE_OUTPUT_PP;
