@@ -9,7 +9,7 @@ void Error_handler(void);
 void SystemClock_Config_HSE(uint8_t clock_freq);
 void UART2_Init(void);
 void TIMER6_init(void);
-
+void GPIO_AnalogConfig(void);
 
 UART_HandleTypeDef huart2;
 TIM_HandleTypeDef htimer6;
@@ -27,6 +27,8 @@ int main(void)
 	UART2_Init();
 
 	TIMER6_init();
+
+	GPIO_AnalogConfig();
 
 	//SCB->SCR |= (1 << 1); // to enable sleeponexit
 
@@ -156,6 +158,22 @@ void Gpio_Init(void)
 	HAL_GPIO_Init(GPIOA, &gpioLed);
 }
 
+
+void GPIO_AnalogConfig(void)
+{
+	//we make all the pin as analog except 2 and 3 which used for usart2
+	// pin 13,14,15 are used for SWD (Serial Wire Debug) interface and JTDI (pin15)
+	GPIO_InitTypeDef GpioA;
+
+	uint32_t gpio_pins =  GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_4 | GPIO_PIN_5 \
+						  | GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_8 | GPIO_PIN_9 \
+						  | GPIO_PIN_10 | GPIO_PIN_11 | GPIO_PIN_12;
+
+
+	GpioA.Pin = gpio_pins;
+	GpioA.Mode = GPIO_MODE_ANALOG;
+	HAL_GPIO_Init(GPIOA, &GpioA);
+}
 
 void UART2_Init(void)
 {

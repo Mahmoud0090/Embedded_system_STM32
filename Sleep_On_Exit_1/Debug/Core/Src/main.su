@@ -1,8 +1,9 @@
 ../Core/Src/main.c:19:5:main	8	static
-../Core/Src/main.c:46:6:SystemClock_Config_HSE	96	static
-../Core/Src/main.c:141:6:Gpio_Init	32	static
-../Core/Src/main.c:160:6:UART2_Init	8	static
-../Core/Src/main.c:177:6:TIMER6_init	8	static
-../Core/Src/main.c:189:6:HAL_TIM_PeriodElapsedCallback	16	static
-../Core/Src/main.c:197:6:HAL_UART_TxCpltCallback	16	static
-../Core/Src/main.c:203:6:Error_handler	4	static
+../Core/Src/main.c:48:6:SystemClock_Config_HSE	96	static
+../Core/Src/main.c:143:6:Gpio_Init	32	static
+../Core/Src/main.c:162:6:GPIO_AnalogConfig	32	static
+../Core/Src/main.c:178:6:UART2_Init	8	static
+../Core/Src/main.c:195:6:TIMER6_init	8	static
+../Core/Src/main.c:207:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:215:6:HAL_UART_TxCpltCallback	16	static
+../Core/Src/main.c:221:6:Error_handler	4	static
